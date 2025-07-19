@@ -1,0 +1,28 @@
+{
+  "resultado": [
+    {
+      "year": 2021,
+      "reporter": "USA",
+      "partner": "China",
+      "trade_flow": "Import",
+      "commodity": "TOTAL",
+      "value_usd": 505000000000
+    },
+    {
+      "year": 2021,
+      "reporter": "USA",
+      "partner": "Mexico",
+      "trade_flow": "Export",
+      "commodity": "TOTAL",
+      "value_usd": 276000000000
+    },
+    {
+      "year": 2021,
+      "reporter": "USA",
+      "partner": "Canada",
+      "trade_flow": "Export",
+      "commodity": "TOTAL",
+      "value_usd": 280000000000
+    }
+  ]
+}

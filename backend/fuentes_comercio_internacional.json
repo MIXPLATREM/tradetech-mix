@@ -1,0 +1,79 @@
+[
+    {
+        "nombre": "Global Trade Helpdesk (Inglés)",
+        "url": "https://www.globaltradehelpdesk.org/",
+        "temas": [
+            "Información de mercado",
+            "Requisitos de exportación",
+            "Aranceles"
+        ],
+        "idioma": "Inglés",
+        "organizacion": "ITC, OMC, UNCTAD"
+    },
+    {
+        "nombre": "Global Trade Helpdesk (Español)",
+        "url": "https://globaltradehelpdesk.org/es",
+        "temas": [
+            "Comercio internacional",
+            "Documentación",
+            "Mercados destino"
+        ],
+        "idioma": "Español",
+        "organizacion": "ITC, OMC, UNCTAD"
+    },
+    {
+        "nombre": "Trade4MSMEs",
+        "url": "https://trade4msmes.org/es/",
+        "temas": [
+            "Recursos para PYMES",
+            "Guías de exportación",
+            "Educación comercial"
+        ],
+        "idioma": "Español",
+        "organizacion": "OMC"
+    },
+    {
+        "nombre": "USDA API",
+        "url": "https://usda.library.cornell.edu/apidoc/index.html",
+        "temas": [
+            "Estadísticas agrícolas",
+            "Normativas alimentarias",
+            "Fitosanitario"
+        ],
+        "idioma": "Inglés",
+        "organizacion": "Departamento de Agricultura de EE.UU."
+    },
+    {
+        "nombre": "Organización Mundial del Comercio (OMC)",
+        "url": "https://www.wto.org/",
+        "temas": [
+            "Normas comerciales",
+            "Acuerdos internacionales",
+            "Datos por país"
+        ],
+        "idioma": "Multilingüe",
+        "organizacion": "OMC"
+    },
+    {
+        "nombre": "UNCTAD – Conferencia de las Naciones Unidas sobre Comercio y Desarrollo",
+        "url": "https://unctad.org/",
+        "temas": [
+            "Inversión",
+            "Desarrollo sostenible",
+            "Datos de comercio"
+        ],
+        "idioma": "Multilingüe",
+        "organizacion": "ONU"
+    },
+    {
+        "nombre": "OIRSA – Organismo Internacional Regional de Sanidad Agropecuaria",
+        "url": "https://www.oirsa.org/",
+        "temas": [
+            "Sanidad agropecuaria",
+            "Requisitos fitosanitarios",
+            "Certificación"
+        ],
+        "idioma": "Español",
+        "organizacion": "OIRSA"
+    }
+]
