@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import logo from '/public/logomix.png'; // asegúrate que el archivo esté en /public
+
+const logo = '/logomix.png'; // acceso correcto desde carpeta public
 
 const Portada = () => {
   const navigate = useNavigate();
