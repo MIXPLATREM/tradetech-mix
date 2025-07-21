@@ -1,3 +1,4 @@
+import React from "react";
 import { Routes, Route } from 'react-router-dom';
 import Portada from './components/Portada';
 // import Resultados from './components/Resultados'; // solo si lo tienes
