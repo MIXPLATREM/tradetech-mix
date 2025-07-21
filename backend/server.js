@@ -20,6 +20,22 @@ app.get('/mock-preview', (req, res) => {
   });
 });
 
+// ✅ NUEVA RUTA DE PRODUCTOS
+app.get('/productos', (req, res) => {
+  const q = req.query.q?.toLowerCase() || '';
+  const productos = [
+    { name: 'Limón', code: '080550' },
+    { name: 'Mango', code: '080450' },
+    { name: 'Piña', code: '080430' },
+  ];
+
+  const resultados = productos.filter((prod) =>
+    prod.name.toLowerCase().includes(q)
+  );
+
+  res.json(resultados);
+});
+
 app.listen(PORT, () => {
   console.log(`✅ Servidor backend corriendo en puerto ${PORT}`);
 });
