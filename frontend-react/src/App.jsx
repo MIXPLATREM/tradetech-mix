@@ -1,18 +1,14 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Portada from './components/Portada';
-// import Resultados from './components/Resultados'; // si ya existe
+// import Resultados from './components/Resultados'; // solo si lo tienes
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Portada />} />
-        {/* <Route path="/resultados" element={<Resultados />} /> */}
-      </Routes>
-    </Router>
+    <Routes>
+      <Route path="/" element={<Portada />} />
+      {/* <Route path="/resultados" element={<Resultados />} /> */}
+    </Routes>
   );
 }
 
 export default App;
-
