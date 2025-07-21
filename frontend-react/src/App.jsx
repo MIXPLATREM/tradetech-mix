@@ -1,15 +1,18 @@
-import { Routes, Route } from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Portada from './components/Portada';
-// Si aún no tienes Resultados.jsx, puedes comentar la siguiente línea:
-// import Resultados from './components/Resultados';
+// import Resultados from './components/Resultados'; // si ya existe
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Portada />} />
-      {/* <Route path="/resultados" element={<Resultados />} /> */}
-    </Routes>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Portada />} />
+        {/* <Route path="/resultados" element={<Resultados />} /> */}
+      </Routes>
+    </Router>
   );
 }
 
 export default App;
+
