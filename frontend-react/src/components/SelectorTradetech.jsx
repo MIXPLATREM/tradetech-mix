@@ -14,10 +14,16 @@ const SelectorTradetech = () => {
 
   const manejarProceso = async () => {
     try {
-      const res = await axios.get(`${BACKEND_URL}/mock-preview`);
-      setResultado(res.data.resultado);
+      const res = await axios.post(`${BACKEND_URL}/procesar`, {
+        modo,
+        origen,
+        destino,
+        producto
+      });
+      console.log("Resultado:", res.data);
+      setResultado(res.data.resultado || []);
     } catch (err) {
-      console.error('Error obteniendo datos simulados:', err);
+      console.error('Error al procesar:', err);
     }
   };
 
@@ -28,6 +34,7 @@ const SelectorTradetech = () => {
         const response = await axios.get(`${BACKEND_URL}/productos?q=${busqueda}`);
         console.log('Respuesta del backend:', response.data);
         setProductos(Array.isArray(response.data) ? response.data : []);
+        console.log('🔍 SelectorTradetech cargado correctamente');
       } catch (err) {
         console.error('Error cargando productos ITC:', err);
         setProductos([]);
@@ -39,6 +46,8 @@ const SelectorTradetech = () => {
     }
   }, [busqueda]);
 
+  console.log("Productos cargados:", productos);
+
   return (
     <div className="max-w-xl mx-auto mt-10 p-6 bg-white rounded-2xl shadow-xl">
       <h2 className="text-2xl font-bold mb-4">Selecciona los parámetros</h2>
@@ -49,21 +58,29 @@ const SelectorTradetech = () => {
         <option value="importar">Importar</option>
       </select>
 
-      <input
-        type="text"
-        placeholder="País de origen"
+      <select
         value={origen}
         onChange={e => setOrigen(e.target.value)}
         className="w-full mb-4 p-2 border rounded"
-      />
+      >
+        <option value="">Selecciona país de origen</option>
+        <option value="México">México</option>
+        <option value="Estados Unidos">Estados Unidos</option>
+        <option value="Canadá">Canadá</option>
+        <option value="Brasil">Brasil</option>
+      </select>
 
-      <input
-        type="text"
-        placeholder="País de destino"
+      <select
         value={destino}
         onChange={e => setDestino(e.target.value)}
         className="w-full mb-4 p-2 border rounded"
-      />
+      >
+        <option value="">Selecciona país de destino</option>
+        <option value="México">México</option>
+        <option value="Estados Unidos">Estados Unidos</option>
+        <option value="Canadá">Canadá</option>
+        <option value="Brasil">Brasil</option>
+      </select>
 
       <input
         type="text"
@@ -81,8 +98,8 @@ const SelectorTradetech = () => {
         >
           <option value="">Selecciona un producto</option>
           {productos.map((prod, i) => (
-            <option key={i} value={prod.code}>
-              {prod.name} ({prod.code})
+            <option key={i} value={prod.codigo || prod.code}>
+              {prod.nombre || prod.name} – {prod.codigo || prod.code}
             </option>
           ))}
         </select>
@@ -94,6 +111,13 @@ const SelectorTradetech = () => {
       >
         Consultar
       </button>
+
+      {resultado.length > 0 && (
+        <div className="mt-4 p-4 bg-gray-100 rounded">
+          <h3 className="font-bold mb-2">Resultado:</h3>
+          <pre>{JSON.stringify(resultado, null, 2)}</pre>
+        </div>
+      )}
     </div>
   );
 };
