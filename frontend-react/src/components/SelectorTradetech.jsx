@@ -94,4 +94,50 @@ const SelectorTradetech = () => {
           <option value="">Selecciona un producto</option>
           {productos.map((prod, i) => (
             <option key={i} value={prod.codigo || prod.code}>
-              {prod.nombre || prod.name} – {prod
+              {prod.nombre || prod.name} – {prod.codigo || prod.code}
+            </option>
+          ))}
+        </select>
+      )}
+
+      <button
+        onClick={manejarProceso}
+        className="w-full bg-blue-600 text-white p-2 rounded hover:bg-blue-700 transition"
+      >
+        Consultar
+      </button>
+
+      {resultado.length > 0 && (
+        <div className="mt-6 overflow-x-auto">
+          <h3 className="text-lg font-semibold mb-3">📊 Resultados simulados de comercio internacional</h3>
+          <table className="min-w-full bg-white border border-gray-300 rounded shadow-md">
+            <thead className="bg-gray-100">
+              <tr>
+                <th className="px-4 py-2 text-left">Año</th>
+                <th className="px-4 py-2 text-left">Reportador</th>
+                <th className="px-4 py-2 text-left">Socio</th>
+                <th className="px-4 py-2 text-left">Flujo</th>
+                <th className="px-4 py-2 text-left">Producto</th>
+                <th className="px-4 py-2 text-left">Valor (USD)</th>
+              </tr>
+            </thead>
+            <tbody>
+              {resultado.map((fila, index) => (
+                <tr key={index} className="border-t hover:bg-gray-50">
+                  <td className="px-4 py-2">{fila.year}</td>
+                  <td className="px-4 py-2">{fila.reporter}</td>
+                  <td className="px-4 py-2">{fila.partner}</td>
+                  <td className="px-4 py-2">{fila.trade_flow}</td>
+                  <td className="px-4 py-2">{fila.commodity}</td>
+                  <td className="px-4 py-2">${fila.value_usd.toLocaleString()}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default SelectorTradetech;
