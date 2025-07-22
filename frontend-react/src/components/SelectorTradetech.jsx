@@ -14,12 +14,7 @@ const SelectorTradetech = () => {
 
   const manejarProceso = async () => {
     try {
-      const res = await axios.post(`${BACKEND_URL}/procesar`, {
-        modo,
-        origen,
-        destino,
-        producto
-      });
+      const res = await axios.get(`${BACKEND_URL}/mock-preview`);
       console.log("Resultado:", res.data);
       setResultado(res.data.resultado || []);
     } catch (err) {
@@ -99,27 +94,4 @@ const SelectorTradetech = () => {
           <option value="">Selecciona un producto</option>
           {productos.map((prod, i) => (
             <option key={i} value={prod.codigo || prod.code}>
-              {prod.nombre || prod.name} – {prod.codigo || prod.code}
-            </option>
-          ))}
-        </select>
-      )}
-
-      <button
-        onClick={manejarProceso}
-        className="w-full bg-blue-600 text-white p-2 rounded hover:bg-blue-700 transition"
-      >
-        Consultar
-      </button>
-
-      {resultado.length > 0 && (
-        <div className="mt-4 p-4 bg-gray-100 rounded">
-          <h3 className="font-bold mb-2">Resultado:</h3>
-          <pre>{JSON.stringify(resultado, null, 2)}</pre>
-        </div>
-      )}
-    </div>
-  );
-};
-
-export default SelectorTradetech;
+              {prod.nombre || prod.name} – {prod
